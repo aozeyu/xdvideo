@@ -38,5 +38,12 @@ public class VideoServiceIml implements VideoService {
         return videoMapper.delete(id);
     }
 
+    @Override
+    public int save(Video video) {
+       int rows = videoMapper.save(video);
+        System.out.println(video.getId());
+       return rows;
+    }
+
 
 }

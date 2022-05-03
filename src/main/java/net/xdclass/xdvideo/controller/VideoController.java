@@ -34,4 +34,11 @@ public class VideoController {
         video.setId(videoId);
         return videoService.update(video);
     }
+
+    @PostMapping("save")
+    public int save(String title){
+        Video video = new Video();
+        video.setTitle(title);
+        return videoService.save(video);
+    }
 }

@@ -21,4 +21,6 @@ public interface VideoService {
     int update(Video video);
 
     int delete(int id);
+
+    int save(Video video);
 }

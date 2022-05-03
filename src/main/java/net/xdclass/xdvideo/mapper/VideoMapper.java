@@ -29,4 +29,7 @@ public interface VideoMapper {
     @Delete("delete from video where id=#{id}")
     int delete(int id);
 
+    @Insert("INSERT INTO `video` ( `title`, `summary`, `cover_img`, `view_num`, `price`, `create_time`, `online`, `point`) VALUES (#{title}, #{summary}, #{coverImg}, #{viewNum}, #{price}, #{createTime}, #{online}, #{point});")
+    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
+    int save(Video video);
 }
