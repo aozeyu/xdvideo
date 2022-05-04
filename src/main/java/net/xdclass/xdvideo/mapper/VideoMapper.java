@@ -1,6 +1,7 @@
 package net.xdclass.xdvideo.mapper;
 
 import net.xdclass.xdvideo.domain.Video;
+import net.xdclass.xdvideo.provider.VideoProvider;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -24,6 +25,7 @@ public interface VideoMapper {
     Video findById(int id);
 
     @Update("update video set title=#{title} where id =#{id}")
+//    @UpdateProvider(type = VideoProvider.class,method = "updateVideo")
     int update(Video video);
 
     @Delete("delete from video where id=#{id}")
